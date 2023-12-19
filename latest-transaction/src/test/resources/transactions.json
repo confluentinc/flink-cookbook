@@ -1,0 +1,5 @@
+{"t_time": "2022-07-19T11:46:20.000Z", "t_id": 0, "t_customer_id": 0, "t_amount": 100.00}
+{"t_time": "2022-07-19T12:00:00.000Z", "t_id": 1, "t_customer_id": 1, "t_amount": 55.00}
+{"t_time": "2022-07-24T12:00:00.000Z", "t_id": 2, "t_customer_id": 0, "t_amount": 500.00}
+{"t_time": "2022-07-24T13:00:00.000Z", "t_id": 3, "t_customer_id": 1, "t_amount": 11.00}
+{"t_time": "2022-07-24T12:59:00.000Z", "t_id": 4, "t_customer_id": 1, "t_amount": 1.00}
