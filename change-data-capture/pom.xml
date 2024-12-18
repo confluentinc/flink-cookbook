@@ -9,7 +9,7 @@
     <name>Flink Cookbook Recipe - Change Data Capture</name>
 
     <properties>
-        <flink.cdc.connector.version>3.0.1</flink.cdc.connector.version>
+        <flink.cdc.connector.version>3.2.1</flink.cdc.connector.version>
         <flink.version>1.17.1</flink.version>
         <jackson.databind.version>2.18.2</jackson.databind.version>
         <junit.jupiter.version>5.9.1</junit.jupiter.version>
@@ -52,7 +52,7 @@
 
         <!-- Flink Postgres CDC connector -->
         <dependency>
-            <groupId>com.ververica</groupId>
+            <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-postgres-cdc</artifactId>
             <version>${flink.cdc.connector.version}</version>
         </dependency>
