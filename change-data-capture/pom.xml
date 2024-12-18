@@ -16,7 +16,7 @@
         <log4j.version>2.24.3</log4j.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
-        <postgres.binary.version>12.13.0</postgres.binary.version>
+        <postgres.binary.version>17.2.0</postgres.binary.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <target.java.version>11</target.java.version>
     </properties>
