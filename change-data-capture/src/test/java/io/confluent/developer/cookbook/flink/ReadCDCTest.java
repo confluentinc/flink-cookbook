@@ -139,7 +139,7 @@ class ReadCDCTest {
             POSTGRES.executeStatement(
                     "UPDATE transactions.incoming SET t_amount = "
                             + record.t_amount
-                            + "WHERE t_id="
+                            + " WHERE t_id="
                             + idPreviousInsert);
         }
         POSTGRES.executeStatement(
