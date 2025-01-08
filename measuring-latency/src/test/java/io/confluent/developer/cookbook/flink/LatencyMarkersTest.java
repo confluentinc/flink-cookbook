@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
+import java.time.Duration;
+
 class LatencyMarkersTest {
 
     @RegisterExtension
@@ -19,7 +21,7 @@ class LatencyMarkersTest {
         Configuration config = new Configuration();
 
         // WARNING: using latency markers can be very expensive
-        config.set(MetricOptions.LATENCY_INTERVAL, 100L);
+        config.set(MetricOptions.LATENCY_INTERVAL, Duration.ofMillis(100));
         config.setString(MetricOptions.LATENCY_SOURCE_GRANULARITY, "single");
 
         // Configure the slf4j metrics reporter

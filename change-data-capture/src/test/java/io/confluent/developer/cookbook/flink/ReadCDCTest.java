@@ -8,8 +8,8 @@ import io.confluent.developer.cookbook.flink.events.Transaction;
 import io.confluent.developer.cookbook.flink.extensions.MiniClusterExtensionFactory;
 import io.confluent.developer.cookbook.flink.records.StatementSupplier;
 import io.confluent.developer.cookbook.flink.utils.CookbookPostgresCluster;
-import com.ververica.cdc.connectors.postgres.PostgreSQLSource;
-import com.ververica.cdc.debezium.JsonDebeziumDeserializationSchema;
+import org.apache.flink.cdc.connectors.postgres.PostgreSQLSource;
+import org.apache.flink.cdc.debezium.JsonDebeziumDeserializationSchema;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -139,7 +139,7 @@ class ReadCDCTest {
             POSTGRES.executeStatement(
                     "UPDATE transactions.incoming SET t_amount = "
                             + record.t_amount
-                            + "WHERE t_id="
+                            + " WHERE t_id="
                             + idPreviousInsert);
         }
         POSTGRES.executeStatement(

@@ -9,12 +9,12 @@
     <name>Flink Cookbook Recipe - Writing an Application in Kotlin</name>
 
     <properties>
-        <flink.version>1.17.1</flink.version>
-        <jackson.databind.version>2.14.1</jackson.databind.version>
-        <jackson.version>2.14.1</jackson.version>
-        <junit.jupiter.version>5.9.1</junit.jupiter.version>
-        <kafka.version>3.2.2</kafka.version>
-        <log4j.version>2.19.0</log4j.version>
+        <flink.version>1.20.0</flink.version>
+        <jackson.version>2.18.2</jackson.version>
+        <junit.jupiter.version>5.11.4</junit.jupiter.version>
+        <kafka.version>3.4.0</kafka.version>
+        <flink.kafka.version>3.3.0-1.20</flink.kafka.version>
+        <log4j.version>2.24.3</log4j.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -40,6 +40,11 @@
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kafka</artifactId>
+            <version>${flink.kafka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-base</artifactId>
             <version>${flink.version}</version>
         </dependency>
         <dependency>
@@ -51,7 +56,7 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
-            <version>1.7.22</version>
+            <version>2.1.0</version>
         </dependency>
 
         <!-- Add logging framework, to produce console output when running in the IDE. -->
@@ -78,8 +83,14 @@
         <!-- Adding jackson dependencies. They must be in the default scope (compile). -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson.databind.version}</version>
+            <version>${jackson.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -197,7 +208,7 @@
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
-                <version>1.7.22</version>
+                <version>2.1.0</version>
                 <executions>
                     <execution>
                         <id>compile</id>

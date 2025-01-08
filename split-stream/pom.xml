@@ -9,12 +9,12 @@
     <name>Flink Cookbook Recipe - Splitting Apache Kafka events</name>
 
     <properties>
-        <flink.version>1.17.1</flink.version>
-        <jackson.databind.version>2.14.1</jackson.databind.version>
-        <jackson.version>2.14.1</jackson.version>
-        <junit.jupiter.version>5.9.1</junit.jupiter.version>
-        <kafka.version>3.2.2</kafka.version>
-        <log4j.version>2.19.0</log4j.version>
+        <flink.version>1.20.0</flink.version>
+        <jackson.version>2.18.2</jackson.version>
+        <junit.jupiter.version>5.11.4</junit.jupiter.version>
+        <kafka.version>3.4.0</kafka.version>
+        <flink.kafka.version>3.3.0-1.20</flink.kafka.version>
+        <log4j.version>2.24.3</log4j.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson.databind.version}</version>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -57,6 +57,11 @@
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kafka</artifactId>
+            <version>${flink.kafka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-base</artifactId>
             <version>${flink.version}</version>
         </dependency>
         <dependency>
