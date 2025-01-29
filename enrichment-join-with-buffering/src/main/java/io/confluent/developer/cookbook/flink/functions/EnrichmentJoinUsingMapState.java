@@ -3,7 +3,6 @@ package io.confluent.developer.cookbook.flink.functions;
 import io.confluent.developer.cookbook.flink.records.Product;
 import io.confluent.developer.cookbook.flink.records.Transaction;
 import java.util.UUID;
-
 import org.apache.flink.api.common.state.MapState;
 import org.apache.flink.api.common.state.MapStateDescriptor;
 import org.apache.flink.api.common.state.ValueState;

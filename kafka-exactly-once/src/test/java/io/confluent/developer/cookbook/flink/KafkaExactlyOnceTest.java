@@ -44,7 +44,8 @@ class KafkaExactlyOnceTest {
         final int numExpectedRecords = 50;
         try (final CookbookKafkaCluster kafka = new CookbookKafkaCluster()) {
             kafka.createTopic(
-                    KafkaExactlyOnce.TOPIC, Stream.generate(new StringSupplier()).limit(numExpectedRecords));
+                    KafkaExactlyOnce.TOPIC,
+                    Stream.generate(new StringSupplier()).limit(numExpectedRecords));
 
             KafkaSource<String> source =
                     KafkaSource.<String>builder()
@@ -60,7 +61,8 @@ class KafkaExactlyOnceTest {
             KafkaExactlyOnce.defineWorkflow(env, source);
             env.execute();
 
-            final List<String> topicRecords = kafka.getTopicRecords(KafkaExactlyOnce.TOPIC, numExpectedRecords + 1);
+            final List<String> topicRecords =
+                    kafka.getTopicRecords(KafkaExactlyOnce.TOPIC, numExpectedRecords + 1);
             assertThat(topicRecords).hasSize(numExpectedRecords);
         }
     }

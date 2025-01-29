@@ -3,7 +3,6 @@ package io.confluent.developer.cookbook.flink;
 import io.confluent.developer.cookbook.flink.events.EnrichedEvent;
 import io.confluent.developer.cookbook.flink.events.KafkaHeadersEventDeserializationSchema;
 import java.util.function.Consumer;
-
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.connector.source.Source;
 import org.apache.flink.connector.kafka.source.KafkaSource;

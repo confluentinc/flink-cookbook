@@ -20,11 +20,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import io.confluent.developer.cookbook.flink.extensions.MiniClusterExtensionFactory;
 import io.confluent.developer.cookbook.flink.records.Event;
+import io.confluent.developer.cookbook.flink.records.SubEvent;
 import io.confluent.developer.cookbook.flink.records.SubEventListTypeInfoFactory;
 import java.nio.file.Path;
 import java.util.List;
-
-import io.confluent.developer.cookbook.flink.records.SubEvent;
 import org.apache.flink.api.common.JobStatus;
 import org.apache.flink.core.execution.JobClient;
 import org.apache.flink.core.execution.SavepointFormatType;
@@ -43,8 +42,8 @@ import org.junit.jupiter.api.io.TempDir;
  * <ul>
  *   <li>1) Set {@link #MANUAL_SAVEPOINT_DIRECTORY} to some local directory.
  *   <li>2) Run {@link #prepareSchemaEvolution()}.
- *   <li>3) Make some changes to the {@link SubEvent} class, like
- *       removing one of the {@code contentX} fields.
+ *   <li>3) Make some changes to the {@link SubEvent} class, like removing one of the {@code
+ *       contentX} fields.
  *   <li>4) Run {@link #applySchemaEvolution()}.
  * </ul>
  *

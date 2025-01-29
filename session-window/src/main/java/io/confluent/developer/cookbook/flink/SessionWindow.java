@@ -4,7 +4,6 @@ import io.confluent.developer.cookbook.flink.events.Event;
 import io.confluent.developer.cookbook.flink.events.EventDeserializationSchema;
 import io.confluent.developer.cookbook.flink.events.UserActivity;
 import java.util.function.Consumer;
-
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.AggregateFunction;

@@ -12,7 +12,6 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
-
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.PrintSink;

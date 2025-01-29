@@ -38,7 +38,9 @@ public class HeaderGenerator implements Function<Event, org.apache.kafka.common.
     @Override
     public org.apache.kafka.common.header.Headers apply(Event event) {
         return new RecordHeaders()
-                .add(KafkaHeadersEventDeserializationSchema.HEADER_TRACE_STATE, asBytes("apache_flink=" + generate(11)))
+                .add(
+                        KafkaHeadersEventDeserializationSchema.HEADER_TRACE_STATE,
+                        asBytes("apache_flink=" + generate(11)))
                 .add(
                         KafkaHeadersEventDeserializationSchema.HEADER_TRACE_PARENT,
                         asBytes("00-" + generate(32) + "-" + generate(16) + "-01"));

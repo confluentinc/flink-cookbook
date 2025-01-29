@@ -2,7 +2,6 @@ package io.confluent.developer.cookbook.flink;
 
 import io.confluent.developer.cookbook.flink.workflows.TableWorkflow;
 import java.net.URI;
-
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.table.api.EnvironmentSettings;
 import org.apache.flink.table.api.TableEnvironment;

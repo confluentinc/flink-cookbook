@@ -1,6 +1,7 @@
 package io.confluent.developer.cookbook.flink;
 
 import io.confluent.developer.cookbook.flink.extensions.MiniClusterExtensionFactory;
+import java.time.Duration;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.MetricOptions;
 import org.apache.flink.metrics.slf4j.Slf4jReporterFactory;
@@ -8,8 +9,6 @@ import org.apache.flink.test.junit5.MiniClusterExtension;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
-
-import java.time.Duration;
 
 class LatencyMarkersTest {
 

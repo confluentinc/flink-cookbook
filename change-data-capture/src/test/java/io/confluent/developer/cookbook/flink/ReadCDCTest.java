@@ -8,14 +8,13 @@ import io.confluent.developer.cookbook.flink.events.Transaction;
 import io.confluent.developer.cookbook.flink.extensions.MiniClusterExtensionFactory;
 import io.confluent.developer.cookbook.flink.records.StatementSupplier;
 import io.confluent.developer.cookbook.flink.utils.CookbookPostgresCluster;
-import org.apache.flink.cdc.connectors.postgres.PostgreSQLSource;
-import org.apache.flink.cdc.debezium.JsonDebeziumDeserializationSchema;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
-
+import org.apache.flink.cdc.connectors.postgres.PostgreSQLSource;
+import org.apache.flink.cdc.debezium.JsonDebeziumDeserializationSchema;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.source.SourceFunction;

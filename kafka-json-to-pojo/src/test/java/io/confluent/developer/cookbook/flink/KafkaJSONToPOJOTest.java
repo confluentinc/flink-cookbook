@@ -9,7 +9,6 @@ import io.confluent.developer.cookbook.flink.events.EventSupplier;
 import io.confluent.developer.cookbook.flink.extensions.MiniClusterExtensionFactory;
 import io.confluent.developer.cookbook.flink.utils.CookbookKafkaCluster;
 import java.util.stream.Stream;
-
 import org.apache.flink.connector.kafka.source.KafkaSource;
 import org.apache.flink.connector.kafka.source.enumerator.initializer.OffsetsInitializer;
 import org.apache.flink.streaming.api.datastream.DataStream;

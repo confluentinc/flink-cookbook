@@ -4,7 +4,6 @@ import io.confluent.developer.cookbook.flink.events.Event;
 import io.confluent.developer.cookbook.flink.events.JsonDeserialization;
 import java.io.IOException;
 import java.util.function.Consumer;
-
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.api.connector.source.Source;

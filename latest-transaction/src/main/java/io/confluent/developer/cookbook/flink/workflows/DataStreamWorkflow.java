@@ -3,7 +3,6 @@ package io.confluent.developer.cookbook.flink.workflows;
 import io.confluent.developer.cookbook.flink.functions.LatestTransactionFunction;
 import io.confluent.developer.cookbook.flink.records.Transaction;
 import java.util.function.Consumer;
-
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.connector.source.Source;
 import org.apache.flink.streaming.api.datastream.DataStream;
