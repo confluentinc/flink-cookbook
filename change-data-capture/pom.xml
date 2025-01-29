@@ -11,7 +11,7 @@
     <properties>
         <flink.cdc.connector.version>3.2.1</flink.cdc.connector.version>
         <flink.version>1.20.0</flink.version>
-        <jackson.databind.version>2.18.2</jackson.databind.version>
+        <jackson.version>2.18.2</jackson.version>
         <junit.jupiter.version>5.11.4</junit.jupiter.version>
         <log4j.version>2.24.3</log4j.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
@@ -80,8 +80,14 @@
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson.databind.version}</version>
+            <version>${jackson.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- Embedded Postgres -->

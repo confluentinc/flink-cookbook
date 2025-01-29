@@ -5,7 +5,6 @@ import static java.time.temporal.ChronoUnit.SECONDS;
 import io.confluent.developer.cookbook.flink.events.Event;
 import java.time.Duration;
 import java.util.function.Consumer;
-
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.connector.file.src.FileSource;

@@ -9,11 +9,11 @@
     <name>Flink Cookbook Recipe - Capturing Late Data</name>
 
     <properties>
+        <flink.kafka.version>3.3.0-1.20</flink.kafka.version>
         <flink.version>1.20.0</flink.version>
         <jackson.version>2.18.2</jackson.version>
         <junit.jupiter.version>5.11.4</junit.jupiter.version>
         <kafka.version>3.4.0</kafka.version>
-        <flink.kafka.version>3.3.0-1.20</flink.kafka.version>
         <log4j.version>2.24.3</log4j.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
@@ -38,6 +38,11 @@
         </dependency>
 
         <!-- Adding jackson dependencies. They must be in the default scope (compile). -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>

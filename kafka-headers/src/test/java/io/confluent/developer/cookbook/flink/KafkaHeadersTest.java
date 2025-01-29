@@ -10,7 +10,6 @@ import io.confluent.developer.cookbook.flink.events.KafkaHeadersEventDeserializa
 import io.confluent.developer.cookbook.flink.extensions.MiniClusterExtensionFactory;
 import io.confluent.developer.cookbook.flink.utils.CookbookKafkaCluster;
 import java.util.stream.Stream;
-
 import org.apache.flink.connector.kafka.source.KafkaSource;
 import org.apache.flink.connector.kafka.source.enumerator.initializer.OffsetsInitializer;
 import org.apache.flink.streaming.api.datastream.DataStream;
@@ -26,6 +25,7 @@ class KafkaHeadersTest {
     @RegisterExtension
     static final MiniClusterExtension FLINK =
             MiniClusterExtensionFactory.withDefaultConfiguration();
+
     /**
      * Runs the production job against an in-memory Kafka cluster.
      *

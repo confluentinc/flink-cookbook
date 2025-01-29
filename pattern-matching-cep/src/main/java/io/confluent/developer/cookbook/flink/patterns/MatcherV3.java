@@ -5,7 +5,6 @@ import io.confluent.developer.cookbook.flink.records.SensorReading;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.flink.cep.functions.PatternProcessFunction;
 import org.apache.flink.cep.nfa.aftermatch.AfterMatchSkipStrategy;
 import org.apache.flink.cep.pattern.Pattern;

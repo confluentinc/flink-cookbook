@@ -8,7 +8,6 @@ import io.confluent.developer.cookbook.flink.events.EventSupplier;
 import io.confluent.developer.cookbook.flink.extensions.MiniClusterExtensionFactory;
 import io.confluent.developer.cookbook.flink.utils.CookbookKafkaCluster;
 import java.util.stream.Stream;
-
 import org.apache.flink.connector.kafka.source.KafkaSource;
 import org.apache.flink.connector.kafka.source.enumerator.initializer.OffsetsInitializer;
 import org.apache.flink.streaming.api.datastream.DataStream;
@@ -35,7 +34,9 @@ class LateDataToSeparateSinkTest {
     @Disabled("Not running 'testProductionJob()' because it is a manual test.")
     void testProductionJob() throws Exception {
         try (final CookbookKafkaCluster kafka = new CookbookKafkaCluster()) {
-            kafka.createTopicAsync(LateDataToSeparateSink.TOPIC, Stream.generate(new EventSupplier(LATE_ELEMENT_DATA)));
+            kafka.createTopicAsync(
+                    LateDataToSeparateSink.TOPIC,
+                    Stream.generate(new EventSupplier(LATE_ELEMENT_DATA)));
 
             LateDataToSeparateSink.runJob();
         }
@@ -47,7 +48,9 @@ class LateDataToSeparateSinkTest {
     void JobProducesAtLeastOneResult() throws Exception {
         try (final CookbookKafkaCluster kafka = new CookbookKafkaCluster()) {
 
-            kafka.createTopicAsync(LateDataToSeparateSink.TOPIC, Stream.generate(new EventSupplier(LATE_ELEMENT_DATA)));
+            kafka.createTopicAsync(
+                    LateDataToSeparateSink.TOPIC,
+                    Stream.generate(new EventSupplier(LATE_ELEMENT_DATA)));
 
             KafkaSource<Event> source =
                     KafkaSource.<Event>builder()

@@ -1,8 +1,8 @@
 package io.confluent.developer.cookbook.flink;
 
+import java.util.function.Consumer;
 import org.apache.flink.cdc.connectors.postgres.PostgreSQLSource;
 import org.apache.flink.cdc.debezium.JsonDebeziumDeserializationSchema;
-import java.util.function.Consumer;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;

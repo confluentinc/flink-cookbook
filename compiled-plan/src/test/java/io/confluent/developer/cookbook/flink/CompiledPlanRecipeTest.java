@@ -102,7 +102,8 @@ class CompiledPlanRecipeTest {
     void testOriginalJob() throws Exception {
         try (final CookbookKafkaCluster kafka = new CookbookKafkaCluster()) {
             kafka.createTopicAsync(
-                    CompiledPlanRecipe.TRANSACTION_TOPIC, Stream.generate(new DuplicatingTransactionSupplier()));
+                    CompiledPlanRecipe.TRANSACTION_TOPIC,
+                    Stream.generate(new DuplicatingTransactionSupplier()));
 
             TableResult result = CompiledPlanRecipe.runOriginalJob();
             result.await();

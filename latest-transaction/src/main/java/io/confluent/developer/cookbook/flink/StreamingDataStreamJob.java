@@ -4,7 +4,6 @@ import io.confluent.developer.cookbook.flink.records.Transaction;
 import io.confluent.developer.cookbook.flink.records.TransactionDeserializer;
 import io.confluent.developer.cookbook.flink.workflows.DataStreamWorkflow;
 import java.util.function.Consumer;
-
 import org.apache.flink.connector.kafka.source.KafkaSource;
 import org.apache.flink.connector.kafka.source.enumerator.initializer.OffsetsInitializer;
 import org.apache.flink.streaming.api.datastream.DataStream;

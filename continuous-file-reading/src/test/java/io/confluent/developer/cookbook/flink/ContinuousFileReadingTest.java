@@ -7,7 +7,6 @@ import io.confluent.developer.cookbook.flink.events.Event;
 import io.confluent.developer.cookbook.flink.extensions.MiniClusterExtensionFactory;
 import java.io.File;
 import java.util.List;
-
 import org.apache.flink.core.fs.Path;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;

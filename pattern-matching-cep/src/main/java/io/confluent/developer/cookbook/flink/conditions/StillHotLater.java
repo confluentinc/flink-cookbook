@@ -2,7 +2,6 @@ package io.confluent.developer.cookbook.flink.conditions;
 
 import io.confluent.developer.cookbook.flink.records.SensorReading;
 import java.time.Duration;
-
 import org.apache.flink.cep.pattern.conditions.IterativeCondition;
 
 public class StillHotLater extends IterativeCondition<SensorReading> {

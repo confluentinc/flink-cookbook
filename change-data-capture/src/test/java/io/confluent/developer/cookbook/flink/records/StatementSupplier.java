@@ -1,7 +1,6 @@
 package io.confluent.developer.cookbook.flink.records;
 
 import io.confluent.developer.cookbook.flink.events.Transaction;
-
 import java.math.BigDecimal;
 import java.util.Random;
 import java.util.function.Supplier;
