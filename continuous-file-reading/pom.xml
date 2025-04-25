@@ -9,8 +9,8 @@
     <name>Flink Cookbook Recipe - Continuous File Reading</name>
 
     <properties>
-        <flink.version>1.20.0</flink.version>
-        <junit.jupiter.version>5.11.4</junit.jupiter.version>
+        <flink.version>1.20.1</flink.version>
+        <junit.jupiter.version>5.12.2</junit.jupiter.version>
         <log4j.version>2.24.3</log4j.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
@@ -69,7 +69,7 @@
         <dependency>
             <groupId>net.datafaker</groupId>
             <artifactId>datafaker</artifactId>
-            <version>1.7.0</version>
+            <version>1.9.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -105,7 +105,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>3.14.0</version>
                 <configuration>
                     <source>${target.java.version}</source>
                     <target>${target.java.version}</target>
@@ -132,7 +132,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.4.1</version>
+                <version>3.6.0</version>
                 <executions>
                     <!-- Run shade goal on package phase -->
                     <execution>

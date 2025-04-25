@@ -9,11 +9,11 @@
     <name>Flink Cookbook Recipe - Capturing Late Data</name>
 
     <properties>
-        <flink.kafka.version>3.3.0-1.20</flink.kafka.version>
-        <flink.version>1.20.0</flink.version>
-        <jackson.version>2.18.2</jackson.version>
-        <junit.jupiter.version>5.11.4</junit.jupiter.version>
-        <kafka.version>3.4.0</kafka.version>
+        <flink.kafka.version>3.4.0-1.20</flink.kafka.version>
+        <flink.version>1.20.1</flink.version>
+        <jackson.version>2.19.0</jackson.version>
+        <junit.jupiter.version>5.12.2</junit.jupiter.version>
+        <kafka.version>3.6.0</kafka.version>
         <log4j.version>2.24.3</log4j.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
@@ -99,7 +99,7 @@
         <dependency>
             <groupId>net.datafaker</groupId>
             <artifactId>datafaker</artifactId>
-            <version>1.7.0</version>
+            <version>1.9.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -151,7 +151,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>3.14.0</version>
                 <configuration>
                     <source>${target.java.version}</source>
                     <target>${target.java.version}</target>
@@ -178,7 +178,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.4.1</version>
+                <version>3.6.0</version>
                 <executions>
                     <!-- Run shade goal on package phase -->
                     <execution>

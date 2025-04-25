@@ -9,8 +9,8 @@
     <name>Flink Cookbook Recipe - Migrating away from Kryo</name>
 
     <properties>
-        <flink.version>1.20.0</flink.version>
-        <junit.jupiter.version>5.11.4</junit.jupiter.version>
+        <flink.version>1.20.1</flink.version>
+        <junit.jupiter.version>5.12.2</junit.jupiter.version>
         <log4j.version>2.24.3</log4j.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.23.1</version>
+            <version>3.27.3</version>
         </dependency>
 
         <!-- Add logging framework, to produce console output when running in the IDE. -->
@@ -100,7 +100,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>3.14.0</version>
                 <configuration>
                     <source>${target.java.version}</source>
                     <target>${target.java.version}</target>
@@ -127,7 +127,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.4.1</version>
+                <version>3.6.0</version>
                 <executions>
                     <!-- Run shade goal on package phase -->
                     <execution>
