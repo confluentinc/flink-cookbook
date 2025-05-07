@@ -12,7 +12,7 @@
         <flink.kafka.version>3.4.0-1.20</flink.kafka.version>
         <flink.version>1.20.1</flink.version>
         <junit.jupiter.version>5.12.2</junit.jupiter.version>
-        <kafka.version>3.9.0</kafka.version>
+        <kafka.version>4.0.0</kafka.version>
         <log4j.version>2.24.3</log4j.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
