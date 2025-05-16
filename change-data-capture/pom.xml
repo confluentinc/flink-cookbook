@@ -9,7 +9,7 @@
     <name>Flink Cookbook Recipe - Change Data Capture</name>
 
     <properties>
-        <flink.cdc.connector.version>3.3.0</flink.cdc.connector.version>
+        <flink.cdc.connector.version>3.4.0</flink.cdc.connector.version>
         <flink.version>1.20.1</flink.version>
         <jackson.version>2.19.0</jackson.version>
         <junit.jupiter.version>5.12.2</junit.jupiter.version>
