@@ -12,7 +12,7 @@ The repository is organized into directories based on the category of operations
 - **03_windowing/**: Tumbling, Sliding, and Session window aggregations
 - **04_joins/**: Relational, Interval, and Temporal joins
 - **05_connectors_and_io/**: Connectors and I/O operations with various data sources
-- **06_general_recipes/**: Additional general-purpose recipes
+- **06_general_recipes/**: Advanced general-purpose recipes and patterns
 - **tools/**: Shared utilities for JAR downloads and environment setup
 
 ## Prerequisites
@@ -34,21 +34,22 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-### 2. Install Dependencies
+### 2. Setup the environment
+
+```bash
+uv venv --python 3.11
+```
+
+### 3. Install Dependencies
 
 ```bash
 # Install PyFlink and other dependencies
 uv add apache-flink pandas pyarrow confluent-kafka
-```
+# or uv pip sync
 
-### 3. Setup Environment
-
-```bash
-# Activate the virtual environment
-uv shell
-
-# Or run commands directly with uv
-uv run python --version
+# or 
+source .venv/bin/activate
+uv pip install apache-flink pandas pyarrow confluent-kafka
 ```
 
 ## Running the Recipes
@@ -57,87 +58,66 @@ uv run python --version
 
 ```bash
 # Basic table operations
-uv run python 01_core_operations/recipe_01_creating_tables.py
-uv run python 01_core_operations/recipe_02_transformations.py
-uv run python 01_core_operations/recipe_03_aggregations.py
-uv run python 01_core_operations/recipe_04_deduplication.py
-```
-
-### User-Defined Functions
-
-```bash
-# UDF examples
-uv run python 02_udfs/recipe_05_scalar_udfs.py
-uv run python 02_udfs/recipe_06_table_udfs.py
-uv run python 02_udfs/recipe_07_aggregate_udfs.py
-```
-
-### Windowing
-
-```bash
-# Window aggregations
-uv run python 03_windowing/recipe_08_tumbling_windows.py
-uv run python 03_windowing/recipe_09_sliding_windows.py
-uv run python 03_windowing/recipe_10_session_windows.py
-```
-
-### Joins
-
-```bash
-# Join operations
-uv run python 04_joins/recipe_11_relational_joins.py
-uv run python 04_joins/recipe_12_interval_joins.py
-uv run python 04_joins/recipe_13_temporal_joins.py
+uv run 00_setting_the_environment/recipe_01_setting_up_the_environment.py
 ```
 
 ### Connectors and I/O
 
-The connectors and I/O section contains recipes for working with various data sources:
+The connectors and I/O section contains recipes for working with various data sources and has additional requirements that will need to be set up:
 
-#### Protocol Buffers with Kafka (Recipe 20)
+#### Protocol Buffers with Kafka (Recipe 19)
 
 ```bash
 # Setup
 cd 05_connectors_and_io/recipe_20_read_kafka_protobuf
-uv run python setup_proto.py
-uv run python setup_jars.py
+uv run setup_proto.py
+uv run setup_jars.py
 
 # Start Kafka
-uv run python ../../tools/start_kafka.py
+uv run ../../tools/start_kafka.py
 
 # Generate data and run recipe
-uv run python generate_proto_data.py
-uv run python recipe_20_read_protobuf.py
+uv run generate_proto_data.py &&
+uv run recipe_20_read_protobuf.py
 ```
 
-#### JSON with Kafka (Recipe 21)
+#### JSON with Kafka (Recipe 20)
 
 ```bash
 # Setup
 cd 05_connectors_and_io
-uv run python setup_json_recipe.py
+uv run setup_json_recipe.py
 
 # Start Kafka
-uv run python tools/start_kafka.py
+uv run tools/start_kafka.py
 
 # Generate data and run recipe
-uv run python generate_json_data.py
-uv run python recipe_21_kafka_connector.py
+uv run generate_json_data.py
+uv run recipe_21_kafka_connector.py
 ```
 
-#### Filesystem Connector (Recipe 22)
+#### Filesystem Connector (Recipe 21)
 
 ```bash
 cd 05_connectors_and_io
-uv run python recipe_22_filesystem_connector.py
+uv run recipe_22_filesystem_connector.py
 ```
 
-#### S3 Parquet Connector (Recipe 23)
+#### S3 Parquet Connector (Recipe 22)
 
 ```bash
 cd 05_connectors_and_io
-uv run python setup_s3_parquet_recipe.py
-uv run python recipe_23_s3_parquet_connector.py
+uv run setup_s3_parquet_recipe.py
+uv run recipe_23_s3_parquet_connector.py
+```
+
+### General Recipes
+
+#### Deduplicated Join (Recipe 23)
+
+```bash
+cd 06_general_recipes/recipe_24_deduplicated_join
+uv run recipe_24_deduplicated_join.py
 ```
 
 ## Connectors and I/O Overview
@@ -148,16 +128,24 @@ The `05_connectors_and_io/` section demonstrates various data source integration
 
 | Format | Recipe | Approach | Use Case |
 |--------|--------|----------|----------|
-| **Protocol Buffers** | Recipe 20 | Custom UDF | Strict schema validation |
-| **JSON** | Recipe 21 | Built-in format | Flexible schema processing |
-| **Files** | Recipe 22 | Filesystem connector | Local file processing |
-| **Parquet** | Recipe 23 | Columnar format | Cloud analytics with S3 |
+| **Protocol Buffers** | Recipe 19 | Custom UDF | Strict schema validation |
+| **JSON** | Recipe 20 | Built-in format | Flexible schema processing |
+| **Files** | Recipe 21 | Filesystem connector | Local file processing |
+| **Parquet** | Recipe 22 | Columnar format | Cloud analytics with S3 |
 
 ### Connector Types
 
 - **Kafka Connector**: Streaming data from Apache Kafka
 - **Filesystem Connector**: Local file processing
 - **S3 Connector**: Cloud storage with Amazon S3
+
+### General Recipes Overview
+
+The `06_general_recipes/` section contains advanced patterns and techniques:
+
+| Recipe | Pattern | Description |
+|--------|---------|-------------|
+| **Recipe 23** | Deduplicated Join | Advanced join operations with deduplication techniques |
 
 ### Shared Tools
 
@@ -186,32 +174,46 @@ Most scripts include `execute().print()` or `execute_insert().wait()` lines. Unc
 
 ## Recipes Overview
 
+
+### Setting up the Environment (00_setting_the_environment/)
+1. **Setting up the Environment**: Basic environment configuration
+2. **Using Catalogs and Databases**: Working with catalogs and databases in Flink
+3. **Adding JARs to Path**: Managing JAR dependencies for connectors
+
 ### Core Operations (01_core_operations/)
 1. **Creating Tables**: from_elements, datagen, from_pandas
-2. **Transformations**: select, filter, alias, column expressions
-3. **Aggregations**: group_by with built-in aggregate functions
-4. **Deduplication**: Using distinct()
+2. **Essential Transformations**: select, filter, alias, column expressions
+3. **Aggregating Data**: group_by with built-in aggregate functions
+4. **Deduplication**: Using distinct() for data deduplication
 
 ### User-Defined Functions (02_udfs/)
 5. **Scalar UDFs**: Custom row-wise transformations
 6. **Table UDFs (UDTFs)**: Generating multiple rows from single input
 7. **Aggregate UDFs (UDAFs)**: Custom aggregation logic
+8. **Custom Deserialization**: Building custom deserializers for data formats
+9. **Flattening Nested JSON**: Processing complex JSON structures
+10. **PII Data Masking**: Protecting sensitive information in data streams
+11. **Data Validation and Quarantine**: Implementing data quality checks
+12. **Sentiment Analysis and Categorization**: Text processing and classification
 
 ### Windowing (03_windowing/)
-8. **Tumbling Windows**: Fixed-size, non-overlapping windows
-9. **Sliding Windows**: Fixed-size, overlapping windows
-10. **Session Windows**: Activity-based windows with inactivity gaps
+13. **Tumbling Windows**: Fixed-size, non-overlapping windows
+14. **Sliding Windows**: Fixed-size, overlapping windows
+15. **Session Windows**: Activity-based windows with inactivity gaps
 
 ### Joins (04_joins/)
-11. **Relational Joins**: Inner, Left, Right, Full Outer joins
-12. **Interval Joins**: Time-bound joins for streaming data
-13. **Temporal Table Joins**: Point-in-time lookups against versioned tables
+16. **Relational Joins**: Inner, Left, Right, Full Outer joins
+17. **Interval Joins**: Time-bound joins for streaming data
+18. **Temporal Table Joins**: Point-in-time lookups against versioned tables
 
 ### Connectors and I/O (05_connectors_and_io/)
-14. **Protocol Buffers with Kafka**: Custom UDF deserialization
-15. **JSON with Kafka**: Built-in JSON format processing
-16. **Filesystem Connector**: Local file reading and writing
-17. **S3 Parquet Connector**: Cloud storage with columnar format
+19. **Protocol Buffers with Kafka**: Custom UDF deserialization
+20. **JSON with Kafka**: Built-in JSON format processing
+21. **Filesystem Connector**: Local file reading and writing
+22. **S3 Parquet Connector**: Cloud storage with columnar format
+
+### General Recipes (06_general_recipes/)
+23. **Deduplicated Join**: Advanced join operations with deduplication techniques
 
 ## Development
 
@@ -227,7 +229,6 @@ Most scripts include `execute().print()` or `execute_insert().wait()` lines. Unc
 1. Use `uv` for dependency management
 2. Follow the existing code structure and documentation style
 3. Include setup scripts for external dependencies
-4. Test with both local and cloud environments
 
 ## Troubleshooting
 
