@@ -11,10 +11,10 @@
     <properties>
         <flink.kafka.version>3.4.0-1.20</flink.kafka.version>
         <flink.version>1.20.1</flink.version>
-        <jackson.version>2.19.0</jackson.version>
-        <junit.jupiter.version>5.12.2</junit.jupiter.version>
+        <jackson.version>2.20.1</jackson.version>
+        <junit.jupiter.version>5.14.1</junit.jupiter.version>
         <kafka.version>3.9.1</kafka.version>
-        <log4j.version>2.24.3</log4j.version>
+        <log4j.version>2.25.2</log4j.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -56,7 +56,7 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
-            <version>2.1.20</version>
+            <version>2.2.21</version>
         </dependency>
 
         <!-- Add logging framework, to produce console output when running in the IDE. -->
@@ -164,7 +164,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.0</version>
+                <version>3.14.1</version>
                 <configuration>
                     <source>${target.java.version}</source>
                     <target>${target.java.version}</target>
@@ -190,7 +190,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.6.0</version>
+                <version>3.6.1</version>
                 <executions>
                     <execution>
                         <phase>generate-sources</phase>
@@ -208,7 +208,7 @@
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
-                <version>2.1.20</version>
+                <version>2.2.21</version>
                 <executions>
                     <execution>
                         <id>compile</id>
@@ -234,7 +234,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.6.0</version>
+                <version>3.6.1</version>
                 <executions>
                     <!-- Run shade goal on package phase -->
                     <execution>
