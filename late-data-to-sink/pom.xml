@@ -11,10 +11,10 @@
     <properties>
         <flink.kafka.version>3.4.0-1.20</flink.kafka.version>
         <flink.version>1.20.1</flink.version>
-        <jackson.version>2.19.0</jackson.version>
-        <junit.jupiter.version>5.12.2</junit.jupiter.version>
+        <jackson.version>2.20.1</jackson.version>
+        <junit.jupiter.version>5.14.1</junit.jupiter.version>
         <kafka.version>3.9.1</kafka.version>
-        <log4j.version>2.24.3</log4j.version>
+        <log4j.version>2.25.2</log4j.version>
         <maven.compiler.source>${target.java.version}</maven.compiler.source>
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -151,7 +151,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.0</version>
+                <version>3.14.1</version>
                 <configuration>
                     <source>${target.java.version}</source>
                     <target>${target.java.version}</target>
@@ -178,7 +178,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.6.0</version>
+                <version>3.6.1</version>
                 <executions>
                     <!-- Run shade goal on package phase -->
                     <execution>
