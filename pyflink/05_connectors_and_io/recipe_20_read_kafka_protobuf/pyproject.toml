@@ -1,0 +1,13 @@
+[project]
+name = "recipe-16-read-protobuf"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "apache-flink>=2.0.0",
+    "confluent-kafka>=2.11.0",
+    "grpcio-tools>=1.65.5",
+    "protobuf>=5.29.5",
+    "python-dateutil>=2.9.0.post0",
+]
